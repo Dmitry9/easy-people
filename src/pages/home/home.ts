@@ -19,6 +19,12 @@ export class HomePage {
   			() => e.complete())
   }
 
+	doInfinite(e) {
+  	this.service.getPeople()
+  		.subscribe(data => this.people.push(...data.results),
+  			err => console.log(err),
+  			() => e.complete())
+  }
 	public people = []
 	
 	public shouldReorder = false
