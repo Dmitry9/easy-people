@@ -17,7 +17,9 @@
 		</ion-refresher-content>
 	</ion-refresher>
   <ion-list [reorder]="shouldReorder" (ionItemReorder)="$event.applyTo(people)">
-  	<ion-item-sliding *ngFor="let person of people">
+  	<ion-item-sliding 
+  		*ngFor="let person of people"
+  		(click)="pushPage(person)">
 	  	<ion-item>
 	  		<ion-avatar>
 	  			<img [src]="person.picture.thumbnail" alt="">
@@ -25,10 +27,10 @@
 	  		{{ person.name.first }} {{ person.name.last }}
 	  		<ion-note item-right>{{ person.phone }}</ion-note>
 	  	</ion-item>
+	  	<ion-item-options side="left">
+	  		<button ion-button>Hi</button>
+	  	</ion-item-options>
 	  </ion-item-sliding>
-  	<ion-item-options side="left">
-  		<button ion-button>Hi</button>
-  	</ion-item-options>
   </ion-list>
 
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
