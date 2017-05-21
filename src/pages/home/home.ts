@@ -12,6 +12,13 @@ export class HomePage {
 			.subscribe(data => this.people = data.results)
   }
 
+  doRefresh(e) {
+  	this.service.getPeople()
+  		.subscribe(data => this.people.unshift(...data.results),
+  			err => console.log(err),
+  			() => e.complete())
+  }
+
 	public people = []
 	
 	public shouldReorder = false
