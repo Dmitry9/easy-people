@@ -1,4 +1,4 @@
-![](./resources/readme-cover.png)
+![](./resources/ionic-meta.jpg)
 
 
 This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
@@ -29,6 +29,6 @@ Substitute ios for android if not on a Mac.
 
 ### To view example in a browser:
 ```bash
-ionic:serve
+$ npm run ionic:serve
 ```
 
